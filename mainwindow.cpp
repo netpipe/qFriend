@@ -14,8 +14,8 @@ int mains(int argc, char **argv);
 }
 
 void test(){
-   //  char *argv1[]={"appname","-h","test"};
-     char *argv1[]={"appname","-l","test"};
+     char *argv1[]={"appname","-h","test"};
+  //   char *argv1[]={"appname","-l",,ui->deviceCMB->currentText().toLocal8Bit().data(),"test"};
      int argc1 = sizeof(argv1) / sizeof(char*) - 1;
 
 
@@ -30,8 +30,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    char *argv1[]={"appname","-l",QString::number(ui->threshold->value()).toLocal8Bit().data(),"-d",ui->deviceCMB->currentText().toLocal8Bit().data(),"test"};
+    int argc1 = sizeof(argv1) / sizeof(char*) - 1;
+
+
+
+ //   mains(argc1,argv1);  to run the command
+
+
+
+
+
     QPixmap oPixmap(32,32);
-    oPixmap.load ( mediadir + "smoking.png");
+    oPixmap.load ( mediadir + "trayicon.png");
 
     QIcon oIcon( oPixmap );
 
